@@ -15,6 +15,9 @@ function deleteTask(title) {
 function getTasks() {
   let tasks = JSON.parse(localStorage.getItem('tasks'));
   let tasksView = document.getElementById('tasks');
+  if (tasks === null){
+    tasks = [];
+  }
   tasksView.innerHTML = '';
   for(let i = 0; i < tasks.length; i++) {
     let title = tasks[i].title;
