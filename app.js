@@ -43,10 +43,10 @@ var form = document.getElementById('formTask');
     form.addEventListener('submit', function(event){
       event.preventDefault();
       var eMessage = [];
-      if(taskField.value == null || taskField.value == ''){
+      if(taskField.value == null || taskField.value == '' ||/^\s+$/.test(taskField.value) === true){
         eMessage.push('Write the task\'s title!');
       }
-      if(descriptionField.value == null || descriptionField.value == ''){
+      if(descriptionField.value == null || descriptionField.value == '' ||  /^\s+$/.test(descriptionField.value) === true){
         eMessage.push('Write the task\'s description!');
       }
 
